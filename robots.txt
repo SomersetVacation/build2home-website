@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://build2home.au/sitemap.xml
