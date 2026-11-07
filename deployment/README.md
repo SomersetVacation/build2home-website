@@ -1,6 +1,6 @@
 # Connect build2home.au
 
-The domain currently uses Crazy Domains nameservers (`ns1.crazydomains.com`, `ns2.crazydomains.com`). Its website A records were absent when checked on 7 November 2026.
+The domain uses Crazy Domains nameservers (`ns1.crazydomains.com`, `ns2.crazydomains.com`). On 7 November 2026 all four apex A records were saved and verified in public DNS. The old www parking A record was replaced with the CNAME below. GitHub Pages has the custom domain and the repository root CNAME file.
 
 At the domain's DNS provider, configure these **website** records:
 
@@ -14,12 +14,11 @@ At the domain's DNS provider, configure these **website** records:
 
 Keep mail/MX/TXT records intact. The public contact is a Gmail address; no new domain email service or MX record is needed for this website.
 
-After the DNS answers correctly:
+Remaining deployment verification:
 
-1. Add a root `CNAME` file containing only `build2home.au` and a newline (the template is in this directory).
-2. Set `build2home.au` under this repository's **Settings → Pages → Custom domain**.
-3. Verify the DNS check and certificate, then enable **Enforce HTTPS** when available.
-4. Verify apex and www redirects plus all support/privacy links.
+1. Confirm the www CNAME has propagated alongside the apex records.
+2. Verify the certificate, then enable **Enforce HTTPS** when available. Last checked: not enforced and HTTPS certificate did not yet match build2home.au; do not bypass browser warnings.
+3. Verify apex and www redirects plus support/privacy links and desktop/mobile visual layout. Static checks pass, but the latest layout change still needs browser verification because localhost preview was unreachable and the custom-domain certificate was pending.
 
 GitHub recommends account-level domain verification. Use the TXT value GitHub actually supplies under account **Settings → Pages**; do not invent one.
 
